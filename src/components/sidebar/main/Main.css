@@ -1,0 +1,11 @@
+.main_video{
+  background: #2d313a !important;
+  color: white !important;
+  border: none !important;
+}
+.main_video *{
+  color:white !important;
+}
+.main_video * input{
+  color:gray !important;
+}
