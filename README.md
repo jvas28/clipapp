@@ -31,12 +31,12 @@ npm run build
 - Import the static files the build folder of the project
 - Add 
 ```html
-  <div id=root></div>
+  <div id=root video-url="YOUR_VIDEO_URL"></div>
 ```
 if you want the admin
 - Add 
 ```html
-  <div id="readonlyplayer" data-playlist='[{"name":"Main Video","start":0,"end":52.209,"main":true,"playing":false},{"name":"Clip 1","start":0,"end":10,"main":false,"playing":false},{"name":"Clip 2","start":10,"end":20,"main":false,"playing":false}]'></div>
+  <div id="readonlyplayer" video-url="YOUR_VIDEO_URL" data-playlist='[{"name":"Main Video","start":0,"end":52.209,"main":true,"playing":false},{"name":"Clip 1","start":0,"end":10,"main":false,"playing":false},{"name":"Clip 2","start":10,"end":20,"main":false,"playing":false}]'></div>
 ```
 if you want the read-only player, you can customize the data-playlist JSON-String
 
