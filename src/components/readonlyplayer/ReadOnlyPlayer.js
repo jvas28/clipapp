@@ -14,7 +14,7 @@ export default class ReadOnlyPlayer extends React.Component {
     return (
           <Provider store={AppStore}>
               <Segment  inverted style={{width:"300px"}} >
-                <Content />
+                <Content url = {this.props.url} />
                 <List readonly={true} playlist={this.props.playlist||[]}/>
               </Segment>
             </Provider>

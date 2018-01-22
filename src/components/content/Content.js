@@ -19,8 +19,8 @@ export default inject('store')(observer( class Content extends React.Component {
         {is_loading? <Dimmer active>
         <Loader size='tiny'>Loading</Loader>
       </Dimmer>:""}
-        <video style={{visibility:is_loading?"hidden":"visible"}} poster="https://media.giphy.com/media/Jn7vRT2O55Shy/giphy.gif" ref="video" onLoadedMetadata={()=>{this.props.store.setDuration(this.refs.video)}}  preload="metadata" width="100%"  >
-          <source src={"http://grochtdreis.de/fuer-jsfiddle/video/sintel_trailer-480.mp4#t="+(start||0)+","+(end||"")} type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
+        <video style={{visibility:is_loading?"hidden":"visible"}}  ref="video" onLoadedMetadata={()=>{this.props.store.setDuration(this.refs.video)}}  preload="metadata" width="100%"  >
+          <source src={this.props.url+"#t="+(start||0)+","+(end||"")} type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
           </video>
        </Segment>
     );

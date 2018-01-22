@@ -19,7 +19,7 @@ class App extends Component {
                  <Sidebar />
                </Grid.Column>
                <Grid.Column width={12}>
-                 <Content />
+                 <Content url={this.props.url} />
                </Grid.Column >
              </Grid.Row>
            </Grid>

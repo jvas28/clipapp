@@ -91,7 +91,7 @@ class AppStore {
 
 
           }
-}
+        }
         this.savePlayList = action(()=>{
               localStorage.setItem("playlist",JSON.stringify(this.clips.toJS()));
         })
