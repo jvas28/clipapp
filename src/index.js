@@ -3,23 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import ReadOnlyPlayer from './components/readonlyplayer/ReadOnlyPlayer';
-if(document.getElementById('root'))
+
+var element;
+if(document.getElementById('react-clipper'))
 {
-  var element = document.getElementById('root');
+  element = document.getElementById('react-clipper');
   let url = element.getAttribute('video-url');
-  ReactDOM.render(<App url = {url} />, document.getElementById('root'));
+  let readonly = false;
+  let playlist = [];
+  if(element.getAttribute('readonly'))
+  {
+      readonly = true;
+  }
+  if(readonly)
+  if(element.getAttribute('data-playlist'))
+  {
+      playlist = JSON.parse(element.getAttribute('data-playlist'));
+  }
+
+  ReactDOM.render(<App url = {url} readonly = {readonly} playlist = {playlist} />, document.getElementById('react-clipper'));
   registerServiceWorker();
 
-}
-
-if(document.getElementById('readonlyplayer'))
-{
-    var element = document.getElementById('readonlyplayer');
-    let url = element.getAttribute('video-url');
-    if(element.getAttribute('data-playlist'))
-    {
-        var playlist = JSON.parse(element.getAttribute('data-playlist'));
-    }
-    ReactDOM.render(<ReadOnlyPlayer url={url} playlist={playlist} />,document.getElementById('readonlyplayer'))
 }
