@@ -46,8 +46,8 @@ export default  inject('store')(observer( class MainVideo extends React.Componen
   render() {
     let tu = new TimeUtils();
 
-    return (<Card fluid className="main_video">
-      <Card.Content>
+    return (<Card fluid className="main_video" >
+      <Card.Content inverted>
         <Card.Meta  >
           <Grid  >
             <Grid.Row >

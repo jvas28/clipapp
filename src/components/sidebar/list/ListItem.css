@@ -1,12 +1,10 @@
 .item-clip{
-  color: white !important;
-  background: #2d313a !important;
+  color: white;
+  background: #2d313a;
   padding:15px !important;
 }
 .item-clip:hover{
-  color: white !important;
-  background: #3e4f75 !important;
-  padding:15px !important;
+  background: #3e4f75;
 }
 .item-clip *{
   color: white !important;
@@ -20,7 +18,7 @@
 }
 
 .playing{
-  background: #765b84 !important;
+  background: #765b84;
 }
 .action_icon{
   cursor: pointer;

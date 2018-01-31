@@ -1,16 +1,22 @@
 import React from 'react';
-import { List,Grid,Icon} from 'semantic-ui-react';
-import "./ListItem.css";
-import {TimeUtils} from '../../../utils/utils';
+import { List,Grid,Icon,Confirm} from 'semantic-ui-react';
 import ClipForm from '../../clipform/ClipForm';
+
+import {TimeUtils} from '../../../utils/utils';
 import {inject,observer} from 'mobx-react'
+
+import "./ListItem.css";
+
 export default inject('store')(observer(class ListItem extends React.Component {
   constructor(props){
     super(props);
-    this.state ={editing:false};
+    this.state ={editing:false,showDeleteConfirmDialog:false};
     this.onItemClick = this.onItemClick.bind(this);
     this.onDeleteClick = this.onDeleteClick.bind(this);
     this.toggleEditing = this.toggleEditing.bind(this);
+    this.showDeleteConfirmDialog = this.showDeleteConfirmDialog.bind(this);
+    this.onCancelDeleteDialog = this.onCancelDeleteDialog.bind(this);
+
 
   }
   onItemClick(){
@@ -25,6 +31,13 @@ export default inject('store')(observer(class ListItem extends React.Component {
   onDeleteClick(){
     var item = this.props.store.clips.filter((clip)=>this.props.id === clip.id)[0];
     this.props.store.removeClip(item);
+    this.setState({showDeleteConfirmDialog:false});
+  }
+  showDeleteConfirmDialog(){
+    this.setState({showDeleteConfirmDialog:true});
+  }
+  onCancelDeleteDialog(){
+    this.setState({showDeleteConfirmDialog:false});
   }
   toggleEditing(){
     this.setState({editing:!this.state.editing})
@@ -47,7 +60,7 @@ export default inject('store')(observer(class ListItem extends React.Component {
                       }
                       {!this.props.store.readonly.get()?
                         <Grid.Column width={2}>
-                          {(!this.props.playing&&!this.state.editing&&!this.props.main)?<Icon name="remove" onClick={this.onDeleteClick} className="action_icon" size="big" color="red" />:""}
+                          {(!this.props.playing&&!this.state.editing&&!this.props.main)?<Icon name="remove" onClick={this.showDeleteConfirmDialog} className="action_icon" size="big" color="red" />:""}
                         </Grid.Column>:""
                       }
 
@@ -63,6 +76,11 @@ export default inject('store')(observer(class ListItem extends React.Component {
                   </List.Description>:""}
 
                 </List.Content>
+                <Confirm
+                    open={this.state.showDeleteConfirmDialog}
+                    onCancel={this.onCancelDeleteDialog}
+                    onConfirm={this.onDeleteClick}
+                  />
               </Tag>);
   }
 }
