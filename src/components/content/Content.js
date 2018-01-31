@@ -1,5 +1,6 @@
 import React from 'react';
 import {Segment,Dimmer,Loader} from 'semantic-ui-react';
+
 import {observer, inject} from 'mobx-react';
 
 export default inject('store')(observer( class Content extends React.Component {
@@ -14,27 +15,27 @@ export default inject('store')(observer( class Content extends React.Component {
     {
       this.props.store.setPlayerProperties(this.refs.video);
       this.refs.video.addEventListener('pause',()=>{
-          let curr_clip_index = playerState.get('current_clip_index');
-          let curr_clip = this.props.store.clips[curr_clip_index];
-          if(parseInt(playerState.get('current_time'),10)+parseInt(curr_clip.start,10) === parseInt(curr_clip.end,10))
-          {
-            this.props.store.videoLoadingStarted();
-            setTimeout(()=>{this.props.store.playNext();return;},3000);
-          }else{
-            this.props.store.playerState.set('playing',false);
-          }
+        let curr_clip_index = playerState.get('current_clip_index');
+        let curr_clip = this.props.store.clips[curr_clip_index];
+        if(parseInt(playerState.get('current_time'),10)+parseInt(curr_clip.start,10) === parseInt(curr_clip.end,10))
+        {
+          this.props.store.videoLoadingStarted();
+          setTimeout(()=>{this.props.store.playNext();return;},3000);
+        }else{
+          this.props.store.playerState.set('playing',false);
+        }
       },false);
       this.refs.video.addEventListener('play',()=>{
-          this.props.store.playerState.set('playing',true);
+        this.props.store.playerState.set('playing',true);
       },false);
       this.refs.video.addEventListener('loadstart',()=>{
-          this.props.store.videoLoadingStarted();
+        this.props.store.videoLoadingStarted();
       });
       this.refs.video.addEventListener('timeupdate',(e)=>{
-          this.props.store.updatePlayerCurrentTime(e.target.currentTime);
+        this.props.store.updatePlayerCurrentTime(e.target.currentTime);
       },false);
       this.refs.video.addEventListener('loadeddata',()=>{
-          this.props.store.videoLoadingFinished();
+        this.props.store.videoLoadingFinished();
 
       });
       this.setState({firstLoad:false})
@@ -47,11 +48,11 @@ export default inject('store')(observer( class Content extends React.Component {
 
       if(this.state.paused)
       {
-            this.refs.video.play();
-            this.setState({paused:false})
+        this.refs.video.play();
+        this.setState({paused:false})
       }else{
-          this.refs.video.pause();
-          this.setState({paused:true})
+        this.refs.video.pause();
+        this.setState({paused:true})
       }
       this.props.store.playerState.set('toggle_requested',false)
     }
@@ -78,12 +79,12 @@ export default inject('store')(observer( class Content extends React.Component {
     return (
       <Segment inverted>
         {is_loading? <Dimmer active>
-        <Loader size='tiny'>Loading</Loader>
-      </Dimmer>:""}
+          <Loader size='tiny'>Loading</Loader>
+        </Dimmer>:""}
         <video style={{visibility:is_loading?"hidden":"visible"}} controls  ref="video" onLoadedMetadata={this.onVideoLoaded}  preload="metadata" width="100%"  >
           <source src={this.props.url+"#t="+(start||0)+","+(end||"")} type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'/>
-          </video>
-       </Segment>
+        </video>
+      </Segment>
     );
   }
 }

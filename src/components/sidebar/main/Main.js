@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, Button,Icon,Grid,Segment } from 'semantic-ui-react';
 import ClipForm from '../../clipform/ClipForm';
+
 import {TimeUtils} from '../../../utils/utils';
 import {observer, inject} from 'mobx-react';
 
@@ -47,12 +48,12 @@ export default  inject('store')(observer( class MainVideo extends React.Componen
     let tu = new TimeUtils();
 
     return (<Card fluid className="main_video" >
-      <Card.Content inverted>
+      <Card.Content>
         <Card.Meta  >
           <Grid  >
             <Grid.Row >
               <Grid.Column>
-                  <Segment  inverted><p >{this.props.store.playerState.get('title')||"Main Video"}</p> <p>{tu.toTimeString(this.props.store.playerState.get('current_time'))}/{tu.toTimeString(this.props.store.playerState.get('current_duration')||0)}</p></Segment>
+                <Segment  inverted><p >{this.props.store.playerState.get('title')||"Main Video"}</p> <p>{tu.toTimeString(this.props.store.playerState.get('current_time'))}/{tu.toTimeString(this.props.store.playerState.get('current_duration')||0)}</p></Segment>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -68,7 +69,7 @@ export default  inject('store')(observer( class MainVideo extends React.Componen
                     <Icon name='chevron right' />
                   </Button>
                 </Button.Group>
-                </Grid.Column>
+              </Grid.Column>
 
 
             </Grid.Row>

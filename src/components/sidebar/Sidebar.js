@@ -7,8 +7,8 @@ export default class Sidebar extends React.Component {
 
   render() {
     return (<Segment >
-              <Main />
-              <List readonly={false}/>
-            </Segment>);
+      <Main />
+      <List readonly={false}/>
+    </Segment>);
   }
 }

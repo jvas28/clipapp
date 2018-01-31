@@ -1,6 +1,8 @@
 import React from 'react';
 import { Segment, Icon, Header as H,Modal,Button,Input } from 'semantic-ui-react'
+
 import {observer, inject} from 'mobx-react';
+
 export default  inject('store')(observer(class Header extends React.Component {
   constructor(props){
     super(props);
@@ -40,24 +42,24 @@ export default  inject('store')(observer(class Header extends React.Component {
         :""
       }
       <Modal size="tiny" open={this.state.showShareDialog} onClose={this.closeShareDialog}>
-            <Modal.Header>
-              Share your playlist
-            </Modal.Header>
-            <Modal.Content>
-              <Input
-                ref="inputcopy"
-                fluid
-                 action={{ color: this.state.copied?'green':'teal', labelPosition: 'right', icon: 'copy', content: this.state.copied?'Copied!':'Copy',onClick:this.onCopy}}
-                 defaultValue={this.state.code}
-               />
-            </Modal.Content>
-            <Modal.Actions>
-              <Button onClick={this.closeShareDialog} negative>
-                Cancel
-              </Button>
+        <Modal.Header>
+          Share your playlist
+        </Modal.Header>
+        <Modal.Content>
+          <Input
+            ref="inputcopy"
+            fluid
+            action={{ color: this.state.copied?'green':'teal', labelPosition: 'right', icon: 'copy', content: this.state.copied?'Copied!':'Copy',onClick:this.onCopy}}
+            defaultValue={this.state.code}
+          />
+        </Modal.Content>
+        <Modal.Actions>
+          <Button onClick={this.closeShareDialog} negative>
+            Cancel
+          </Button>
 
-            </Modal.Actions>
-          </Modal>
+        </Modal.Actions>
+      </Modal>
     </Segment>);
   }
 }))
