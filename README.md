@@ -1,6 +1,9 @@
 # ClipApp
 React Application for clipping videos and making playlists
 ![Admin](https://raw.githubusercontent.com/jvas28/clipapp/master/screenshots/admin.PNG)
+
+Check the Demo - [Here](https://jvas28.github.io/clipapp/)
+
 ## Applied Technologies
 - React JS 
 - Mobx
