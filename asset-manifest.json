@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.222a563d.chunk.css",
-    "main.js": "/static/js/main.cc06decb.chunk.js",
-    "main.js.map": "/static/js/main.cc06decb.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.588dfb81.js",
-    "runtime~main.js.map": "/static/js/runtime~main.588dfb81.js.map",
-    "static/css/2.97872149.chunk.css": "/static/css/2.97872149.chunk.css",
-    "static/js/2.47dc3e88.chunk.js": "/static/js/2.47dc3e88.chunk.js",
-    "static/js/2.47dc3e88.chunk.js.map": "/static/js/2.47dc3e88.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.17dc5f9251dbe06b87e49d1b575deaaa.js": "/precache-manifest.17dc5f9251dbe06b87e49d1b575deaaa.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.97872149.chunk.css.map": "/static/css/2.97872149.chunk.css.map",
-    "static/css/main.222a563d.chunk.css.map": "/static/css/main.222a563d.chunk.css.map",
-    "static/media/semantic.min.css": "/static/media/icons.fee66e71.woff"
+    "main.css": "/clipapp/static/css/main.222a563d.chunk.css",
+    "main.js": "/clipapp/static/js/main.2a644cfa.chunk.js",
+    "main.js.map": "/clipapp/static/js/main.2a644cfa.chunk.js.map",
+    "runtime~main.js": "/clipapp/static/js/runtime~main.06e4b604.js",
+    "runtime~main.js.map": "/clipapp/static/js/runtime~main.06e4b604.js.map",
+    "static/css/2.b3646333.chunk.css": "/clipapp/static/css/2.b3646333.chunk.css",
+    "static/js/2.47dc3e88.chunk.js": "/clipapp/static/js/2.47dc3e88.chunk.js",
+    "static/js/2.47dc3e88.chunk.js.map": "/clipapp/static/js/2.47dc3e88.chunk.js.map",
+    "index.html": "/clipapp/index.html",
+    "precache-manifest.c3c6b720af462caf5c5c5decea9a2798.js": "/clipapp/precache-manifest.c3c6b720af462caf5c5c5decea9a2798.js",
+    "service-worker.js": "/clipapp/service-worker.js",
+    "static/css/2.b3646333.chunk.css.map": "/clipapp/static/css/2.b3646333.chunk.css.map",
+    "static/css/main.222a563d.chunk.css.map": "/clipapp/static/css/main.222a563d.chunk.css.map",
+    "static/media/semantic.min.css": "/clipapp/static/media/icons.fee66e71.woff"
   }
 }
